@@ -9,6 +9,13 @@ namespace ApiExample.Controllers
     {
         private static List<Order> Orders = new List<Order>();
 
+        static OrdersController()
+        {
+            Orders.Add(new Order { Id = 1, ProductName = "Product 1", Quantity = 10, Price = 100.0m, OrderDate = DateTime.Now });
+            Orders.Add(new Order { Id = 2, ProductName = "Product 2", Quantity = 5, Price = 50.0m, OrderDate = DateTime.Now });
+            Orders.Add(new Order { Id = 3, ProductName = "Product 3", Quantity = 20, Price = 200.0m, OrderDate = DateTime.Now });
+        }
+
         [HttpPost]
         public ActionResult<Order> AddOrder(Order order)
         {
