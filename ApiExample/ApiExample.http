@@ -1,6 +1,42 @@
-@ApiExample_HostAddress = http://localhost:5121
-
-GET {{ApiExample_HostAddress}}/weatherforecast/
+### Get all orders
+GET https://localhost:7207/api/orders
 Accept: application/json
 
 ###
+
+### Get order by ID
+GET https://localhost:7207/api/orders/1
+Accept: application/json
+
+###
+
+### Add a new order
+POST https://localhost:7207/api/orders
+Content-Type: application/json
+
+{
+  "productName": "New Product",
+  "quantity": 15,
+  "price": 150.0,
+  "orderDate": "2025-04-01T00:00:00"
+}
+
+###
+
+### Update an existing order
+PUT https://localhost:7207/api/orders/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "productName": "Updated Product",
+  "quantity": 20,
+  "price": 200.0,
+  "orderDate": "2025-04-01T00:00:00"
+}
+
+###
+
+### Delete an order
+DELETE https://localhost:7207/api/orders/1
+Accept: application/json
